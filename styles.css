@@ -69,6 +69,7 @@ nav ul li a {
   position: relative;
   z-index: 10;
 }
+/*
 .curvy-background {
   position: absolute;
   bottom: 0;
@@ -81,7 +82,7 @@ nav ul li a {
   width: 100%;
   height: auto;
   display: block;
-}
+} */
 
 .hero-container img {
   width: 304px;
@@ -386,11 +387,26 @@ footer .contact-us {
   margin-bottom: 1rem;
 }
 
-.contact-us div {
+.contact-us .location {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.contact-us .contact-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
+}
+
+.contact-us .contact-details .phone-number {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.contact-us .contact-details .email {
+  display: inline-flex;
+  gap: 1rem;
 }
 
 .contact-us div img {
@@ -401,6 +417,7 @@ footer .contact-us {
 .contact-us div p {
   display: inline;
   text-align: left;
+  max-width: 300px;
 }
 
 footer nav {
@@ -461,6 +478,19 @@ footer .social-icons ul li img {
     margin: 0 auto;
   }
 
+  .hero-container .cta-button {
+    max-width: 50%;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features .feature-box p{
+    max-width: 350px;
+
+  }
+
   .stay-productive {
     flex-direction: row;
   }
@@ -479,6 +509,48 @@ footer .social-icons ul li img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
     margin: 2rem;
+  }
+
+  .sign-up form {
+    flex-direction: row;
+  }
+  .sign-up form input {
+    margin-bottom: 0;
+  }
+  .sign-up form button {
+    width: 50%;
+  }
+
+  footer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  footer .contact-us {
+    flex-direction: row;
+  }
+
+  footer nav {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  footer .social-icons {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-container {
+    width: 60%;
+  }
+
+  .hero-container img {
+    width: 620px;
+    height: 434px;
+  }
+
+  .hero-container .cta-button {
+    max-width: 50%;
   }
 
 }
