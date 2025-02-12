@@ -15,6 +15,8 @@
   --color-accent-light-red-error: hsl(0, 100%, 63%);
   --color-neutral-white: hsl(0, 0%, 100%);
   --color-cyan-underline: hsla(177, 67%, 63%, 1);
+  --color-cyan-button-hover: hsla(186, 62%, 72%, 1);
+
 }
 
 body {
@@ -55,7 +57,24 @@ nav ul li a {
   font-weight: 400;
   letter-spacing: 0.05rem;
   text-decoration: none;
+  padding-bottom: 5px;
   transition: color 0.3s ease;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-neutral-white); /* Change to your theme color */
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Expand underline smoothly */
 }
 
 .hero-container {
@@ -118,6 +137,10 @@ nav ul li a {
   transition: background-color 0.3s ease;
   box-shadow: 2px 3px 6px 0px hsla(0, 0%, 0%, 0.16);
   width: 70%;
+}
+
+.hero-container .cta-button:hover {
+  background-color: var(--color-cyan-button-hover);
 }
 
 h1,
@@ -190,6 +213,7 @@ p {
   gap: 0.5rem;
   position: relative;
 }
+
 .stay-productive .cta-link a {
   color: var(--color-accent-cyan-cta);
   font-size: 0.86rem;
@@ -198,6 +222,9 @@ p {
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+.stay-productive .cta-link a:hover{
+  color: var(--color-neutral-white);
 }
 
 .stay-productive .cta-link img {
@@ -216,7 +243,11 @@ p {
   left: 0;
   bottom: -6px;
 }
+.stay-productive .cta-link:hover::after {
 
+  background-color: var(--color-neutral-white);
+
+}
 .testimonials {
   display: flex;
   flex-direction: column;
@@ -360,6 +391,17 @@ p {
   width: 100%;
 }
 
+.sign-up form button:hover {
+  background-color: var(--color-accent-blue-cta-hover);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -499,7 +541,6 @@ footer .social-icons ul li img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
   }
   .stay-productive .cta-link::after {
     width: 100%;
@@ -539,9 +580,9 @@ footer .social-icons ul li img {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .hero-container {
-    width: 60%;
+    width: 45%;
   }
 
   .hero-container img {
@@ -552,5 +593,31 @@ footer .social-icons ul li img {
   .hero-container .cta-button {
     max-width: 50%;
   }
-
+  .features {
+    margin: 0;
+  }
+  .features .feature-box p {
+    max-width: 400px;
+  }
+  .stay-productive > img {
+    width: 614.76px;
+    height: 463.63px;
+  }
+  .stay-productive article {
+    justify-content: center;
+  }
+  .stay-productive h2 {
+    font-size: 2.86rem;
+    line-height: 3.6rem;
+    text-align: left;
+    max-width: 400px;
+  }
+  .sign-up {
+    width: 50%;
+    transform: translateY(-50%);
+    left: 25%;
+  }
+  footer {
+    gap: 4rem;
+  }
 }
