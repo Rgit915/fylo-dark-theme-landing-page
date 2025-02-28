@@ -16,7 +16,6 @@
   --color-neutral-white: hsl(0, 0%, 100%);
   --color-cyan-underline: hsla(177, 67%, 63%, 1);
   --color-cyan-button-hover: hsla(186, 62%, 72%, 1);
-
 }
 
 body {
@@ -26,6 +25,9 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+header, .hero-container {
+  background-color: var(--color-primary-dark-blue-intro);
 }
 
 header {
@@ -62,18 +64,22 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a::after {
+header nav ul li a:hover {
+  font-weight: 700;
+}
+
+header nav ul li a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-neutral-white); /* Change to your theme color */
+  background-color: var(--color-neutral-white);
   transition: width 0.3s ease-in-out;
 }
 
-nav ul li a:hover::after {
+header nav ul li a:hover::after {
   width: 100%; /* Expand underline smoothly */
 }
 
@@ -85,23 +91,12 @@ nav ul li a:hover::after {
   padding: 1.5rem;
   text-align: center;
   color: var(--color-neutral-white);
-  position: relative;
-  z-index: 10;
-}
-/*
-.curvy-background {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-}
+  background-image: url("./images/bg-curvy-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 65%;
+  background-position: bottom;
 
-.curvy-background img {
-  width: 100%;
-  height: auto;
-  display: block;
-} */
+}
 
 .hero-container img {
   width: 304px;
@@ -118,6 +113,7 @@ nav ul li a:hover::after {
 
 .hero-container p {
   line-height: 1.75rem;
+  position: relative;
 }
 
 .hero-container .cta-button {
@@ -140,7 +136,7 @@ nav ul li a:hover::after {
 }
 
 .hero-container .cta-button:hover {
-  background-color: var(--color-cyan-button-hover);
+  background: var(--color-cyan-button-hover);
 }
 
 h1,
@@ -223,7 +219,7 @@ p {
   cursor: pointer;
   transition: color 0.3s ease;
 }
-.stay-productive .cta-link a:hover{
+.stay-productive .cta-link a:hover {
   color: var(--color-neutral-white);
 }
 
@@ -244,9 +240,7 @@ p {
   bottom: -6px;
 }
 .stay-productive .cta-link:hover::after {
-
   background-color: var(--color-neutral-white);
-
 }
 .testimonials {
   display: flex;
@@ -362,16 +356,7 @@ p {
   margin-bottom: 1rem;
   cursor: pointer;
 }
-/*
-  &:focus {
-    outline: none;
-    background-color: var(--color-primary-dark-blue-intro-focus);
-  }
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
- */
+
 .sign-up form button {
   padding: 1rem 2rem;
   background: linear-gradient(
@@ -392,13 +377,13 @@ p {
 }
 
 .sign-up form button:hover {
-  background-color: var(--color-accent-blue-cta-hover);
+  background: var(--color-cyan-button-hover);
 }
 
 .error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
+  color: var(--color-accent-light-red-error);
+  font-size: 0.7rem;
+  font-weight: 700;
   display: none;
 }
 
@@ -484,6 +469,10 @@ footer nav ul li {
   line-height: 1.56rem;
 }
 
+footer nav ul li a:hover {
+  font-weight: 700;
+}
+
 footer .social-icons {
   display: flex;
   justify-content: center;
@@ -516,21 +505,23 @@ footer .social-icons ul li img {
   }
 
   .hero-container {
-    width: 80%;
-    margin: 0 auto;
+    background-size: 100% 45%;
+  }
+
+  .hero-container h1, p {
+    max-width: 562px;
   }
 
   .hero-container .cta-button {
-    max-width: 50%;
+    max-width: 30%;
   }
 
   .features {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .features .feature-box p{
+  .features .feature-box p {
     max-width: 350px;
-
   }
 
   .stay-productive {
@@ -550,6 +541,13 @@ footer .social-icons ul li img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
     margin: 2rem;
+    margin-left: 4rem;
+  }
+  .testimonials > img {
+    width: 60px;
+    left: -1%;
+    transform: translateY(-11%);
+    z-index: -1;
   }
 
   .sign-up form {
@@ -560,6 +558,10 @@ footer .social-icons ul li img {
   }
   .sign-up form button {
     width: 50%;
+  }
+  .error-message {
+    text-align: left;
+    margin-left: 1rem;
   }
 
   footer {
@@ -582,7 +584,7 @@ footer .social-icons ul li img {
 
 @media screen and (min-width: 1200px) {
   .hero-container {
-    width: 45%;
+    background-size: 100% 30%;
   }
 
   .hero-container img {
@@ -591,7 +593,7 @@ footer .social-icons ul li img {
   }
 
   .hero-container .cta-button {
-    max-width: 50%;
+    max-width: 20%;
   }
   .features {
     margin: 0;
@@ -612,11 +614,16 @@ footer .social-icons ul li img {
     text-align: left;
     max-width: 400px;
   }
+  .testimonials {
+    margin-left: 7rem;
+  }
+
   .sign-up {
     width: 50%;
     transform: translateY(-50%);
     left: 25%;
   }
+
   footer {
     gap: 4rem;
   }
