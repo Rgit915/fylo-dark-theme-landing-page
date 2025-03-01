@@ -25,8 +25,8 @@ Users should be able to:
 ### Screenshot
 
 
-![Fylo dark theme landing page Desktop preview](https://github.com/Rgit915/fylo-dark-theme-landing-page/blob/main/screenshots/fylo-landing-page-desktop-error-state-preview.png)
-![Fylo dark theme landing page Mobile preview](https://github.com/Rgit915/fylo-dark-theme-landing-page/blob/main/screenshots/fylo-landing-page-mobile-solution-preview.png)
+![Fylo dark theme landing page Desktop preview](https://github.com/Rgit915/fylo-dark-theme-landing-page/blob/master/screenshots/fylo-landing-page-desktop-error-state-preview.png)
+![Fylo dark theme landing page Mobile preview](https://github.com/Rgit915/fylo-dark-theme-landing-page/blob/master/screenshots/fylo-landing-page-mobile-solution-preview.png)
 
 ### Links
 
