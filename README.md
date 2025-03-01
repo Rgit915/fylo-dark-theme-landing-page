@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Code Repo](https://github.com/Rgit915/fylo-dark-theme-landing-page)
-- Live Site URL: [Live Demo](https://github.com/Rgit915/fylo-dark-theme-landing-page/)
+- Live Site URL: [Live Demo](https://rgit915.github.io/fylo-dark-theme-landing-page/)
 
 ## My process
 
